@@ -1,0 +1,251 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: justify;
+    color: dimgray;
+    box-sizing: border-box;
+}
+
+.warpper {
+    width: 1290px;
+    margin: auto;
+}
+
+.clear {
+    clear: both;
+}
+
+#header {
+    padding: 0 10px;
+}
+
+#navbar {
+    padding: 0 10px;
+    background-color: #272727;
+    background-clip: content-box;
+}
+
+#navbar ul {
+    margin: 0;
+    padding-left: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    list-style: none;
+}
+
+#navbar ul li {
+    margin: 15px;
+    display: inline;
+}
+
+#navbar ul li a {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: white;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    color: red;
+    cursor: pointer;
+}
+
+#carousel {
+    padding: 0 10px;
+    height: 450px;
+    margin-top: 10px;
+    background-image: url(/bai_tap_nop/img/slider_1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-clip: content-box;
+}
+
+#intro {
+    padding: 0 10px;
+    background-clip: content-box;
+}
+
+#intro .description {
+    font-size: 20px;
+    line-height: 25px;
+    margin: auto;
+    padding: 10px 0;
+}
+
+#intro .company-name {
+    font-weight: bold;
+    color: red;
+}
+
+#intro .product-left,
+#intro .product-right {
+    width: 50%;
+    padding: 0 10px;
+    float: left;
+}
+
+#intro .product-item {
+    float: left;
+    padding: 10px;
+}
+
+#intro .product-item-half {
+    width: 50%;
+}
+
+#intro .product-item-full {
+    width: 100%;
+}
+
+#intro .product-left img {
+    width: 100%;
+}
+
+#intro .product-right img {
+    height: 334px;
+}
+
+#product .item {
+    width: 25%;
+    padding: 0 10px;
+    float: left;
+}
+
+#product .title {
+    text-align: center;
+    font-family: 'MS Reference Sans Serif';
+    font-size: xx-large;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 10px 0;
+}
+
+#product .item img {
+    width: 100%;
+}
+
+#product .item-title {
+    font-family: 'MS Reference Sans Serif';
+    font-size: 30px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+#product .item-content {
+    font-size: 16px;
+    margin: 0;
+}
+
+#product .item-btn {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    font-family: 'MS Reference Sans Serif';
+    margin: 10px 0;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgba(217, 87, 86, 1);
+}
+
+#product button:hover {
+    background-color: rgba(217, 87, 86, 0.7);
+    cursor: pointer;
+}
+
+#banner {
+    height: 400px;
+    position: relative;
+    background-image: url(/bai_tap_nop/img/nature.jpg);
+    background-size: cover;
+}
+
+#banner .saleoff {
+    width: 250px;
+    height: 250px;
+    left: 5%;
+    top: 10%;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(211, 29, 37, 0.5);
+}
+
+#banner .saleoff h2,
+#banner .saleoff p {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+#banner .saleoff h2 {
+    font-family: 'MS Reference Sans Serif';
+    font-size: xx-large;
+    font-weight: normal;
+    margin-top: 40px;
+}
+
+#banner .saleoff p:nth-child(2) {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90px;
+}
+
+#banner .saleoff p:nth-child(3) {
+    font-size: 20px;
+}
+
+#service {
+    width: 90%;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+#service .item {
+    width: 33.333333%;
+    text-align: center;
+    float: left;
+}
+
+#service .item h2,
+#service .item p {
+    text-align: center;
+    margin: 0;
+}
+
+#service .item h2 {
+    font-weight: 400;
+}
+
+#service .item p {
+    font-size: smaller;
+    margin-top: 5px;
+}
+
+#service .item img {
+    width: 50px;
+}
+
+#footer {
+    margin-top: 20px;
+    background-color: black;
+}
+
+#footer h2,
+#footer p {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+#footer h2 {
+    font-size: 27px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+#footer p {
+    font-size: smaller;
+    line-height: 25px;
+    padding-bottom: 10px;
+}
