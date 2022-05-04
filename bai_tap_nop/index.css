@@ -53,7 +53,7 @@
     padding: 0 10px;
     height: 450px;
     margin-top: 10px;
-    background-image: url(/bai_tap_nop/img/slider_1.jpg);
+    background-image: url('./img/slider_1.jpg');
     background-size: cover;
     background-position: center center;
     background-clip: content-box;
@@ -156,7 +156,7 @@
 #banner {
     height: 400px;
     position: relative;
-    background-image: url(/bai_tap_nop/img/nature.jpg);
+    background-image: url('./img/nature.jpg');
     background-size: cover;
 }
 
