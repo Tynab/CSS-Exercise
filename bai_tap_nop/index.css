@@ -1,3 +1,4 @@
+/* common */
 * {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: justify;
@@ -6,7 +7,7 @@
 }
 
 .warpper {
-    width: 1290px;
+    width: 100%;
     margin: auto;
 }
 
@@ -14,12 +15,14 @@
     clear: both;
 }
 
+/* header */
 #header {
-    padding: 0 10px;
+    padding: 0 0.5vw;
 }
 
+/* navbar */
 #navbar {
-    padding: 0 10px;
+    padding: 0 0.5vw;
     background-color: #272727;
     background-clip: content-box;
 }
@@ -49,26 +52,28 @@
     cursor: pointer;
 }
 
+/* carousel */
 #carousel {
-    padding: 0 10px;
-    height: 450px;
-    margin-top: 10px;
+    height: 22.5vw;
+    margin-top: 0.5vw;
+    padding: 0 0.5vw;
     background-image: url('./img/slider_1.jpg');
     background-size: cover;
     background-position: center center;
     background-clip: content-box;
 }
 
+/* intro */
 #intro {
-    padding: 0 10px;
+    padding: 0 0.5vw;
     background-clip: content-box;
 }
 
 #intro .description {
-    font-size: 20px;
-    line-height: 25px;
     margin: auto;
-    padding: 10px 0;
+    padding: 0.5vw 0;
+    font-size: 1vw;
+    line-height: 1.3vw;
 }
 
 #intro .company-name {
@@ -79,45 +84,56 @@
 #intro .product-left,
 #intro .product-right {
     width: 50%;
-    padding: 0 10px;
+    padding: 0 0.5vw;
     float: left;
+    height: 36vw;
 }
 
 #intro .product-item {
+    padding: 0.5vw;
     float: left;
-    padding: 10px;
 }
 
 #intro .product-item-half {
     width: 50%;
+    height: 14vw;
 }
 
 #intro .product-item-full {
     width: 100%;
+    height: 22vw;
+}
+
+#intro .product-item-dub {
+    width: 100%;
+    height: 18vw;
 }
 
 #intro .product-left img {
     width: 100%;
+    max-height: 100%;
 }
 
 #intro .product-right img {
-    height: 334px;
+    width: 100%;
+    max-height: 100%;
 }
 
+/* product */
 #product .item {
     width: 25%;
-    padding: 0 10px;
+    padding: 0 0.5vw;
     float: left;
 }
 
 #product .title {
+    margin: 0;
+    padding: 0.5vw 0;
     text-align: center;
     font-family: 'MS Reference Sans Serif';
-    font-size: xx-large;
+    font-size: 1.6vw;
     font-weight: 500;
-    letter-spacing: 2px;
-    margin: 0;
-    padding: 10px 0;
+    letter-spacing: 0.1vw;
 }
 
 #product .item img {
@@ -125,26 +141,26 @@
 }
 
 #product .item-title {
+    margin: 0.5vw 0;
     font-family: 'MS Reference Sans Serif';
-    font-size: 30px;
+    font-size: 1.5vw;
     font-weight: normal;
-    margin: 10px 0;
 }
 
 #product .item-content {
-    font-size: 16px;
     margin: 0;
+    font-size: 0.8vw;
 }
 
 #product .item-btn {
     width: 80px;
     height: 30px;
-    text-align: center;
-    font-family: 'MS Reference Sans Serif';
     margin: 10px 0;
-    color: white;
     border: 0;
     border-radius: 5px;
+    text-align: center;
+    font-family: 'MS Reference Sans Serif';
+    color: white;
     background-color: rgba(217, 87, 86, 1);
 }
 
@@ -153,50 +169,54 @@
     cursor: pointer;
 }
 
+/* banner */
 #banner {
-    height: 400px;
+    height: 20vw;
     position: relative;
     background-image: url('./img/nature.jpg');
     background-size: cover;
+    background-position: center center;
+    background-clip: content-box;
 }
 
 #banner .saleoff {
-    width: 250px;
-    height: 250px;
+    width: 12.5vw;
+    height: 12.5vw;
+    position: absolute;
     left: 5%;
     top: 10%;
-    position: absolute;
     border-radius: 50%;
     background-color: rgba(211, 29, 37, 0.5);
 }
 
 #banner .saleoff h2,
 #banner .saleoff p {
-    text-align: center;
     margin: 0;
+    text-align: center;
     color: white;
 }
 
 #banner .saleoff h2 {
+    margin-top: 2vw;
     font-family: 'MS Reference Sans Serif';
-    font-size: xx-large;
+    font-size: 1.6vw;
     font-weight: normal;
-    margin-top: 40px;
 }
 
 #banner .saleoff p:nth-child(2) {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 90px;
+    font-size: 4.5vw;
 }
 
 #banner .saleoff p:nth-child(3) {
-    font-size: 20px;
+    font-size: 1vw;
 }
 
+/* service */
 #service {
     width: 90%;
-    margin: 20px auto;
-    padding: 0 10px;
+    margin: 1vw auto;
+    padding: 0 0.5vw;
 }
 
 #service .item {
@@ -207,45 +227,154 @@
 
 #service .item h2,
 #service .item p {
-    text-align: center;
     margin: 0;
+    text-align: center;
 }
 
 #service .item h2 {
+    font-size: 1.2vw;
     font-weight: 400;
 }
 
 #service .item p {
-    font-size: smaller;
-    margin-top: 5px;
+    margin-top: 0.3vw;
+    font-size: 0.7vw;
 }
 
 #service .item img {
-    width: 50px;
+    width: 2.5vw;
 }
 
+/* footer */
 #footer {
     margin-top: 20px;
     background-color: black;
+    background-clip: content-box;
 }
 
 #footer h2,
 #footer p {
-    text-align: center;
     margin: 0;
+    text-align: center;
     color: white;
 }
 
 #footer h2 {
+    padding-top: 15px;
+    padding-bottom: 5px;
     font-size: 27px;
     font-weight: 400;
     letter-spacing: 1px;
-    padding-top: 15px;
-    padding-bottom: 5px;
 }
 
 #footer p {
+    padding-bottom: 10px;
     font-size: smaller;
     line-height: 25px;
-    padding-bottom: 10px;
+}
+
+/* reponsive */
+@media (min-width:1281px) {
+    .warpper {
+        width: 1281px;
+    }
+}
+
+@media (max-width:1025px) {
+
+    /* header */
+    #header {
+        padding: 0 1vw;
+    }
+
+    /* navbar */
+    #navbar {
+        padding: 0 1vw;
+    }
+
+    /* carousel */
+    #carousel {
+        padding: 0 1vw;
+    }
+
+    /* intro */
+    #intro {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+
+    #intro .description span {
+        display: none;
+    }
+
+    #intro .description:after {
+        content: 'SẢN PHẨM';
+    }
+
+    #intro .description {
+        padding: 1vw 1vw;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: large;
+        font-weight: bold;
+        color: black;
+    }
+
+    #intro .main {
+        display: none;
+    }
+
+    /* product */
+    #product {
+        padding: 0 0.5vw;
+    }
+
+    #product .item {
+        width: 50%;
+    }
+
+    #product .title {
+        display: none;
+    }
+
+    #product .item-title {
+        display: none;
+    }
+
+    #product .item-content {
+        display: none;
+    }
+
+    /* banner */
+    #banner {
+        padding: 0 1vw;
+    }
+
+    /* service */
+    #service {
+        display: none;
+    }
+
+    /* footer */
+    #footer {
+        padding: 0 1vw;
+    }
+}
+
+@media (max-width:600px) {
+
+    /* header */
+    #header img {
+        max-width: 100%;
+    }
+
+    /* navbar */
+    #navbar ul li {
+        display: list-item;
+    }
+
+    /* product */
+    #product .item {
+        width: 100%;
+    }
 }
