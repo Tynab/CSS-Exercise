@@ -1,380 +1,462 @@
-/* common */
-* {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: justify;
-    color: dimgray;
+/*
+    Tóm tắt CSS:
+    - File định kiểu toàn bộ landing page nội thất KLK Phúc Thịnh.
+    - Layout dùng flex/grid thay cho float để mã gọn, dễ responsive và không cần kỹ thuật dọn float.
+    - Các breakpoint bên dưới tối ưu hiển thị cho desktop, tablet và điện thoại.
+*/
+
+/* Biến màu và kích thước dùng lại trong toàn bộ trang. */
+:root {
+    --container-width: 1281px;
+    --page-gap: 8px;
+    --content-gap: 16px;
+    --dark-color: #272727;
+    --text-color: #5c5c5c;
+    --muted-color: #707070;
+    --brand-color: #d91f2a;
+    --brand-color-soft: rgba(217, 31, 42, 0.78);
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    --font-heading: "MS Reference Sans Serif", Arial, Helvetica, sans-serif;
+}
+
+/* Reset nhẹ giúp kích thước phần tử dễ kiểm soát hơn. */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-.warpper {
-    width: 100%;
-    margin: auto;
+html {
+    scroll-behavior: smooth;
 }
 
-.clear {
-    clear: both;
-}
-
-/* header */
-#header {
-    padding: 0 0.5vw;
-}
-
-/* navbar */
-#navbar {
-    padding: 0 0.5vw;
-    background-color: #272727;
-    background-clip: content-box;
-}
-
-#navbar ul {
+body {
     margin: 0;
-    padding-left: 0;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    overflow-x: hidden;
+    color: var(--text-color);
+    font-family: var(--font-main);
+    background-color: #ffffff;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+/* Ẩn nội dung khỏi giao diện nhưng vẫn giữ cho trình đọc màn hình. */
+.sr-only {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    border: 0;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+}
+
+/* Khung chính giới hạn chiều rộng giống demo gốc. */
+.wrapper {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+    padding: 0 var(--page-gap);
+}
+
+.site-header a {
+    display: inline-block;
+}
+
+.site-header img {
+    width: clamp(220px, 24vw, 320px);
+}
+
+/* Navbar */
+.site-nav {
+    padding: 0 var(--page-gap);
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0 4px;
     list-style: none;
+    background-color: var(--dark-color);
 }
 
-#navbar ul li {
-    margin: 15px;
-    display: inline;
-}
-
-#navbar ul li a {
+.nav-list a {
+    display: block;
+    padding: 18px 14px;
+    color: #ffffff;
     font-size: 15px;
-    letter-spacing: 1px;
-    color: white;
     text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-#navbar ul li a:hover {
-    color: red;
-    cursor: pointer;
+.nav-list a:hover,
+.nav-list a:focus-visible {
+    color: #ffffff;
+    background-color: var(--brand-color);
+    outline: none;
 }
 
-/* carousel */
-#carousel {
-    height: 22.5vw;
-    margin-top: 0.5vw;
-    padding: 0 0.5vw;
-    background-image: url('./img/slider_1.jpg');
+/* Hero */
+.hero {
+    height: clamp(240px, 22.5vw, 440px);
+    margin-top: var(--page-gap);
+    padding: 0 var(--page-gap);
+    background-image: url("./img/slider_1.jpg");
+    background-position: center;
     background-size: cover;
-    background-position: center center;
+    background-origin: content-box;
     background-clip: content-box;
 }
 
-/* intro */
-#intro {
-    padding: 0 0.5vw;
-    background-clip: content-box;
+/* Intro */
+.intro {
+    padding: 0 var(--page-gap);
 }
 
-#intro .description {
-    margin: auto;
-    padding: 0.5vw 0;
-    font-size: 1vw;
-    line-height: 1.3vw;
-}
-
-#intro .company-name {
-    font-weight: bold;
-    color: red;
-}
-
-#intro .product-left,
-#intro .product-right {
-    width: 50%;
-    padding: 0 0.5vw;
-    float: left;
-    height: 36vw;
-}
-
-#intro .product-item {
-    padding: 0.5vw;
-    float: left;
-}
-
-#intro .product-item-half {
-    width: 50%;
-    height: 14vw;
-}
-
-#intro .product-item-full {
-    width: 100%;
-    height: 22vw;
-}
-
-#intro .product-item-dub {
-    width: 100%;
-    height: 18vw;
-}
-
-#intro .product-left img {
-    width: 100%;
-    max-height: 100%;
-}
-
-#intro .product-right img {
-    width: 100%;
-    max-height: 100%;
-}
-
-/* product */
-#product .item {
-    width: 25%;
-    padding: 0 0.5vw;
-    float: left;
-}
-
-#product .title {
+.description {
     margin: 0;
-    padding: 0.5vw 0;
-    text-align: center;
-    font-family: 'MS Reference Sans Serif';
-    font-size: 1.6vw;
+    padding: 16px 0 18px;
+    color: var(--muted-color);
+    font-size: clamp(15px, 1vw, 17px);
+    line-height: 1.6;
+    text-align: justify;
+    overflow-wrap: break-word;
+}
+
+.company-name {
+    color: var(--brand-color);
+}
+
+/* Bộ ảnh intro: chia hai cột, cột trái có ảnh nhỏ + ảnh rộng, cột phải có hai ảnh lớn. */
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--content-gap);
+}
+
+.product-left,
+.product-right {
+    min-height: clamp(430px, 36vw, 620px);
+}
+
+.product-left {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 40% 60%;
+    gap: var(--content-gap);
+}
+
+.product-right {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: var(--content-gap);
+}
+
+.product-item {
+    margin: 0;
+    overflow: hidden;
+}
+
+.product-item-full {
+    grid-column: 1 / -1;
+}
+
+.product-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.product-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Product */
+.product-section {
+    padding: 20px var(--page-gap) 0;
+}
+
+.title {
+    margin: 0;
+    padding-bottom: 18px;
+    color: var(--dark-color);
+    font-family: var(--font-heading);
+    font-size: clamp(24px, 1.6vw, 30px);
     font-weight: 500;
-    letter-spacing: 0.1vw;
+    text-align: center;
 }
 
-#product .item img {
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--content-gap);
+}
+
+.product-section .item {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-section .item img {
     width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
 
-#product .item-title {
-    margin: 0.5vw 0;
-    font-family: 'MS Reference Sans Serif';
-    font-size: 1.5vw;
-    font-weight: normal;
+.item-title {
+    margin: 12px 0 8px;
+    color: var(--dark-color);
+    font-family: var(--font-heading);
+    font-size: clamp(20px, 1.5vw, 28px);
+    font-weight: 400;
 }
 
-#product .item-content {
+.item-content {
+    flex: 1;
     margin: 0;
-    font-size: 0.8vw;
+    color: var(--text-color);
+    font-size: clamp(14px, 0.85vw, 16px);
+    line-height: 1.55;
+    text-align: justify;
+    overflow-wrap: break-word;
 }
 
-#product .item-btn {
-    width: 80px;
-    height: 30px;
-    margin: 10px 0;
+.item-btn {
+    width: fit-content;
+    min-width: 88px;
+    min-height: 34px;
+    margin-top: 14px;
+    padding: 0 14px;
     border: 0;
     border-radius: 5px;
-    text-align: center;
-    font-family: 'MS Reference Sans Serif';
-    color: white;
-    background-color: rgba(217, 87, 86, 1);
-}
-
-#product button:hover {
-    background-color: rgba(217, 87, 86, 0.7);
+    color: #ffffff;
+    background-color: var(--brand-color);
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* banner */
-#banner {
-    height: 20vw;
+.item-btn:hover,
+.item-btn:focus-visible {
+    background-color: var(--brand-color-soft);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+/* Banner */
+.sale-banner {
+    height: clamp(220px, 20vw, 360px);
+    margin-top: 24px;
     position: relative;
-    background-image: url('./img/nature.jpg');
+    background-image: url("./img/nature.jpg");
+    background-position: center;
     background-size: cover;
-    background-position: center center;
-    background-clip: content-box;
 }
 
-#banner .saleoff {
-    width: 12.5vw;
-    height: 12.5vw;
+.saleoff {
+    width: clamp(132px, 12.5vw, 190px);
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    left: 5%;
     top: 10%;
+    left: 5%;
     border-radius: 50%;
-    background-color: rgba(211, 29, 37, 0.5);
+    background-color: rgba(211, 29, 37, 0.58);
 }
 
-#banner .saleoff h2,
-#banner .saleoff p {
+.saleoff h2,
+.saleoff p {
     margin: 0;
-    text-align: center;
-    color: white;
-}
-
-#banner .saleoff h2 {
-    margin-top: 2vw;
-    font-family: 'MS Reference Sans Serif';
-    font-size: 1.6vw;
-    font-weight: normal;
-}
-
-#banner .saleoff p:nth-child(2) {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 4.5vw;
-}
-
-#banner .saleoff p:nth-child(3) {
-    font-size: 1vw;
-}
-
-/* service */
-#service {
-    width: 90%;
-    margin: 1vw auto;
-    padding: 0 0.5vw;
-}
-
-#service .item {
-    width: 33.333333%;
-    text-align: center;
-    float: left;
-}
-
-#service .item h2,
-#service .item p {
-    margin: 0;
+    color: #ffffff;
     text-align: center;
 }
 
-#service .item h2 {
-    font-size: 1.2vw;
+.saleoff h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(18px, 1.6vw, 28px);
     font-weight: 400;
 }
 
-#service .item p {
-    margin-top: 0.3vw;
-    font-size: 0.7vw;
+.saleoff p:nth-child(2) {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(46px, 4.5vw, 78px);
+    line-height: 1;
 }
 
-#service .item img {
-    width: 2.5vw;
+.saleoff p:nth-child(3) {
+    font-size: clamp(13px, 1vw, 18px);
+    line-height: 1.25;
 }
 
-/* footer */
-#footer {
-    margin-top: 20px;
-    background-color: black;
-    background-clip: content-box;
+/* Service */
+.service-section {
+    width: 90%;
+    max-width: 1120px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--content-gap);
+    margin: 24px auto;
+    padding: 0 var(--page-gap);
 }
 
-#footer h2,
-#footer p {
+.service-section .item {
+    text-align: center;
+}
+
+.service-section .item img {
+    width: clamp(36px, 2.5vw, 48px);
+    margin: 0 auto 8px;
+}
+
+.service-section h3,
+.service-section p {
     margin: 0;
     text-align: center;
-    color: white;
 }
 
-#footer h2 {
-    padding-top: 15px;
-    padding-bottom: 5px;
+.service-section h3 {
+    color: var(--dark-color);
+    font-size: clamp(18px, 1.2vw, 22px);
+    font-weight: 400;
+}
+
+.service-section p {
+    margin-top: 8px;
+    color: var(--text-color);
+    font-size: clamp(13px, 0.8vw, 15px);
+    line-height: 1.45;
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 20px;
+    padding: 16px var(--page-gap) 14px;
+    background-color: #000000;
+}
+
+.site-footer h2,
+.site-footer address {
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.site-footer h2 {
+    padding-bottom: 6px;
     font-size: 27px;
     font-weight: 400;
-    letter-spacing: 1px;
 }
 
-#footer p {
-    padding-bottom: 10px;
-    font-size: smaller;
-    line-height: 25px;
+.site-footer address {
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.8;
+    overflow-wrap: break-word;
 }
 
-/* reponsive */
-@media (min-width:1281px) {
-    .warpper {
-        width: 1281px;
-    }
-}
-
-@media (max-width:1025px) {
-
-    /* header */
-    #header {
-        padding: 0 1vw;
+/* Responsive cho tablet. */
+@media (max-width: 1024px) {
+    :root {
+        --page-gap: 10px;
     }
 
-    /* navbar */
-    #navbar {
-        padding: 0 1vw;
+    .site-header img {
+        width: clamp(200px, 32vw, 300px);
     }
 
-    /* carousel */
-    #carousel {
-        padding: 0 1vw;
+    .nav-list a {
+        padding: 15px 12px;
     }
 
-    /* intro */
-    #intro {
-        margin-top: 10px;
-        margin-bottom: 5px;
-        padding: 0;
+    .main {
+        grid-template-columns: 1fr;
     }
 
-    #intro .description span {
-        display: none;
+    .product-left,
+    .product-right {
+        min-height: 0;
     }
 
-    #intro .description:after {
-        content: 'SẢN PHẨM';
+    .product-left {
+        grid-template-rows: auto;
     }
 
-    #intro .description {
-        padding: 1vw 1vw;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: large;
-        font-weight: bold;
-        color: black;
+    .product-right {
+        grid-template-rows: none;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    #intro .main {
-        display: none;
+    .product-item {
+        aspect-ratio: 16 / 10;
     }
 
-    /* product */
-    #product {
-        padding: 0 0.5vw;
-    }
-
-    #product .item {
-        width: 50%;
-    }
-
-    #product .title {
-        display: none;
-    }
-
-    #product .item-title {
-        display: none;
-    }
-
-    #product .item-content {
-        display: none;
-    }
-
-    /* banner */
-    #banner {
-        padding: 0 1vw;
-    }
-
-    /* service */
-    #service {
-        display: none;
-    }
-
-    /* footer */
-    #footer {
-        padding: 0 1vw;
+    .product-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width:600px) {
-
-    /* header */
-    #header img {
+/* Responsive cho điện thoại. */
+@media (max-width: 600px) {
+    .site-header img {
+        width: 260px;
         max-width: 100%;
     }
 
-    /* navbar */
-    #navbar ul li {
-        display: list-item;
+    .nav-list {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 0;
     }
 
-    /* product */
-    #product .item {
-        width: 100%;
+    .nav-list a {
+        padding: 13px 16px;
+    }
+
+    .hero {
+        height: 220px;
+    }
+
+    .description {
+        text-align: left;
+    }
+
+    .product-left,
+    .product-right,
+    .product-list,
+    .service-section {
+        grid-template-columns: 1fr;
+    }
+
+    .product-item-full {
+        grid-column: auto;
+    }
+
+    .saleoff {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
